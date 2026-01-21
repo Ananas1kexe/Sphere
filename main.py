@@ -5,7 +5,7 @@ from pathlib import Path
 
 import app_version
 
-app = typer.Typer(help="Hello")
+app = typer.Typer(help="Sphere {version} Command Line Interface".format(version=app_version.VERSION))
 
 @app.command()
 def main(show_version: bool = typer.Option(False, '-v', '--version', help="Show application version")):
