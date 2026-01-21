@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+import sys
+import os
+
+# Добавляем путь к проекту
+sys.path.insert(0, '/home/kiril/Sphere')
+
+from sphere.cli import app
+
+if __name__ == '__main__':
+    sys.exit(app())

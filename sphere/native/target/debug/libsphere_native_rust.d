@@ -1,0 +1,1 @@
+/home/kiril/Sphere/sphere/native/target/debug/libsphere_native_rust.so: /home/kiril/Sphere/sphere/native/src/lib.rs
