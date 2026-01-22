@@ -6,10 +6,8 @@ from pathlib import Path
 from sphere import app_version
 
 import  sphere_native_rust
-from .hardware import cpu_info, ram, disk
+from .hardware import cpu_info, ram_info, disk
 from enum import Enum
-
-
 
 
 app = typer.Typer(help="Sphere {version} Command Line Interface".format(version=app_version.VERSION))
@@ -30,6 +28,12 @@ def cpu(
     mode = handle_cpu_flags(minimal, full)
     cpu_info.cpu_show(mode)
     raise typer.Exit() 
+
+
+@app.command("ram", help="Show Ram information")
+def ram():
+    ram_info.ram_show()
+    raise typer.Exit()
 
 
 def handle_cpu_flags(minimal: bool, full: bool) -> str:
