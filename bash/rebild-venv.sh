@@ -5,5 +5,7 @@ pip install --upgrade pip
 pip install -e .
 pip install maturin
 pip install typer
+pip install psutil
 maturin dev
 ./bash/fix.sh
+./bash/clear_build.sh

@@ -9,4 +9,7 @@ crate-type = ["cdylib"]
 [dependencies]
 raw-cpuid = "11.6.0"
 sysinfo = "0.37.2"
+cpuid = "0.1"  
+num_cpus = "1.0"  
+psutil = "0.9"
 pyo3 = { version = "0.21", features = ["extension-module"] }
