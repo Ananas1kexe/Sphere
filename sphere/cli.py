@@ -6,7 +6,7 @@ from pathlib import Path
 from sphere import app_version
 
 import  sphere_native_rust
-from .hardware import cpu_info, ram_info, disk
+from .hardware import cpu_info, ram_info, disk, logo
 from enum import Enum
 
 
@@ -20,6 +20,11 @@ def v():
     typer.echo(app_version.VERSION)
     raise typer.Exit()
 
+@app.command("logo", help="Show application logo")
+def logo_show():
+    logo.show_logo()
+    raise typer.Exit()
+
 @app.command("cpu", help="Show CPU information -m for minimal, -f for full")
 def cpu(   
     minimal: bool = typer.Option(False, "-m", help="Show minimal CPU info"),
@@ -30,13 +35,28 @@ def cpu(
     raise typer.Exit() 
 
 
-@app.command("ram", help="Show Ram information")
-def ram():
-    ram_info.ram_show()
+@app.command("ram", help="Show RAM information -m for minimal, -f for full")
+def ram(
+    minimal: bool = typer.Option(False, "-m", help="Show minimal CPU info"),
+    full: bool = typer.Option(False, "-f", help="Show full CPU info")
+    ):
+    mode = handle_ram_flags(minimal, full)
+    ram_info.ram_show(mode)
     raise typer.Exit()
 
 
 def handle_cpu_flags(minimal: bool, full: bool) -> str:
+    if minimal and full:
+        typer.echo("Please specify only one option: '-m' or '-f'.")
+        return "invalid"
+    if full:
+        return "full"
+    elif minimal:
+        return "minimal"
+    else:
+        return "invalid"
+
+def handle_ram_flags(minimal: bool, full: bool) -> str:
     if minimal and full:
         typer.echo("Please specify only one option: '-m' or '-f'.")
         return "invalid"
