@@ -92,8 +92,6 @@ def full():
 
 
 
-## ===== Basic info =====
-
 def typeDDR() ->  str:
     path = "/sys/firmware/dmi/entries"
 
