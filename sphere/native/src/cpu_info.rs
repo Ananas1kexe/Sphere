@@ -5,47 +5,45 @@ use pyo3::pyfunction;
 
 pub fn register_functions_cpu_info(m: &pyo3::prelude::PyModule) -> pyo3::PyResult<()> {
     // Basic information functions
-    m.add_function(wrap_pyfunction!(py_vendor, m)?)?;
-    m.add_function(wrap_pyfunction!(py_brand, m)?)?;
-    m.add_function(wrap_pyfunction!(py_logical_cores, m)?)?;
-    m.add_function(wrap_pyfunction!(py_physical_cores, m)?)?;
-    m.add_function(wrap_pyfunction!(py_cpu_frequency_mhz, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(vendor, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(brand, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(logical_cores, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(physical_cores, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(cpu_frequency_mhz, m)?)?;
     
     // CPU architecture
-    m.add_function(wrap_pyfunction!(py_cpu_family, m)?)?;
-    m.add_function(wrap_pyfunction!(py_cpu_model, m)?)?;
-    m.add_function(wrap_pyfunction!(py_cpu_stepping, m)?)?;
-    m.add_function(wrap_pyfunction!(py_architecture, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(cpu_family, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(cpu_model, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(cpu_stepping, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(architecture, m)?)?;
     
     // Cache information
-    m.add_function(wrap_pyfunction!(py_l1_cache_size_kb, m)?)?;
-    m.add_function(wrap_pyfunction!(py_l2_cache_size_kb, m)?)?;
-    m.add_function(wrap_pyfunction!(py_l3_cache_size_kb, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(l1_cache_size_kb, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(l2_cache_size_kb, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(l3_cache_size_kb, m)?)?;
     
     // Feature flags
-    m.add_function(wrap_pyfunction!(py_hyperthreading, m)?)?;
-    m.add_function(wrap_pyfunction!(py_virtualization, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_fpu, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_mmx, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_sse, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_sse2, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_sse3, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_ssse3, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_sse4_1, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_sse4_2, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_avx, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_avx2, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_fma, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_aes, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_rdrand, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_bmi1, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_bmi2, m)?)?;
-    m.add_function(wrap_pyfunction!(py_has_3dnow, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(hyperthreading, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_virtualization, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_fpu, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_mmx, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_sse, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_sse2, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_sse3, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_ssse3, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_sse4_1, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_sse4_2, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_avx, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_avx2, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_fma, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_aes, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_rdrand, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_bmi1, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(has_bmi2, m)?)?;
     
     // Convenience functions
-    m.add_function(wrap_pyfunction!(py_minimal, m)?)?;
-    m.add_function(wrap_pyfunction!(py_full, m)?)?;
-    m.add_function(wrap_pyfunction!(py_get_all_info, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(minimal, m)?)?;
+    m.add_function(pyo3::wrap_pyfunction!(full, m)?)?;
     
     Ok(())
 }
