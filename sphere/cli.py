@@ -23,6 +23,7 @@ def v():
 @app.command("logo", help="Show application logo")
 def logo_show():
     logo.show_logo()
+    typer.echo(typer.style(f"You use: {app_version.VERSION} version", fg=typer.colors.YELLOW))
     raise typer.Exit()
 
 @app.command("cpu", help="Show CPU information -m for minimal, -f for full")
