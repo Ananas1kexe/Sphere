@@ -7,10 +7,11 @@ from sphere import app_version
 
 import  sphere_native_rust
 
+from .hardware.ram_info import ram_info, handle_ram_flags
 from .hardware.cpu_info import cpu_info, handle_cpu_flags
 
 from . import logo
-from .hardware import ram_info, disk, net_show
+from .hardware import disk, net_show
 from enum import Enum
 
 
@@ -54,21 +55,10 @@ def ram(
     minimal: bool = typer.Option(False, "-m", help="Show minimal RAM info"),
     full: bool = typer.Option(False, "-f", help="Show full RAM info")
     ):
-    mode = handle_ram_flags(minimal, full)
+    mode = handle_ram_flags.handle_ram_flags(minimal, full)
     ram_info.ram_show(mode)
     raise typer.Exit()
 
-
-def handle_ram_flags(minimal: bool, full: bool) -> str:
-    if minimal and full:
-        typer.echo("Please specify only one option: '-m' or '-f'.")
-        return "invalid"
-    if full:
-        return "full"
-    elif minimal:
-        return "minimal"
-    else:
-        return "invalid"
 
 if __name__ == "__main__":
     app()
