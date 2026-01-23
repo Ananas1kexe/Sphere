@@ -7,17 +7,25 @@ from sphere import app_version
 
 import  sphere_native_rust
 
+from .hardware.net_show import net_show
+
 from .hardware.ram_info import ram_info, handle_ram_flags
 from .hardware.cpu_info import cpu_info, handle_cpu_flags
+from .install import install
 
 from . import logo
-from .hardware import disk, net_show
+from .hardware import disk
 from enum import Enum
 
 
 app = typer.Typer(help="Sphere {version} Command Line Interface".format(version=app_version.VERSION))
 
+@app.command("install", help=" ")
+def install():
 
+
+
+    raise type.Exit()
 
 
 @app.command("v", help="Show application version")
