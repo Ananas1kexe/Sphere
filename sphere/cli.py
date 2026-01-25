@@ -27,14 +27,14 @@ from enum import Enum
 
 app = typer.Typer(help="Sphere {version} Command Line Interface".format(version=app_version.VERSION))
 
-@app.command("install", help=" ")
+@app.command("install", help="Install packages ")
 def install(package: str):
 
     install_main.install(package)
 
     raise typer.Exit()
 
-@app.command("update", help=" ")
+@app.command("update", help=" Update system packages  ")
 def update():
     update_main.update_main()
     raise typer.Exit()
