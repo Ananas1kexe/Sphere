@@ -14,7 +14,10 @@ from .hardware.ram_info import ram_info, handle_ram_flags
 from .hardware.cpu_info import cpu_info, handle_cpu_flags
 from .hardware.gpu_info import gpu_info, handle_gpu_flags
 from .hardware.users import show_user
-from .install import install_main
+
+from .pkg_actions.install import install_main
+from .pkg_actions.update import update_main
+
 
 from . import logo
 from .hardware import disk
@@ -30,6 +33,10 @@ def install(package: str):
 
     raise typer.Exit()
 
+@app.command("update", help=" ")
+def update():
+    update_main.update_main()
+    raise typer.Exit()
 
 @app.command("v", help="Show application version")
 def v():
