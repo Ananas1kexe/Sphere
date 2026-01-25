@@ -1,21 +1,23 @@
+
 *.py linguist-language=Python
-*.pyw linguist-language=Python
-
 *.rs linguist-language=Rust
-Cargo.toml linguist-language=Rust
 
+
+node_modules/** linguist-vendored
 __pycache__/** linguist-vendored
-*.py[cod] linguist-vendored
+*.pyc linguist-vendored
+*.pyo linguist-vendored
+*.pyd linguist-vendored
 target/** linguist-vendored
+Cargo.lock linguist-vendored
+dist/** linguist-vendored
+build/** linguist-vendored
+*.min.* linguist-vendored
+*.bundle.js linguist-vendored
+*.log linguist-vendored
+*.cache linguist-vendored
 
 *.md linguist-documentation
 *.txt linguist-documentation
-*.yml linguist-documentation
-*.yaml linguist-documentation
-*.json linguist-documentation
-.gitignore linguist-documentation
-
-*.so linguist-vendored
-*.pyd linguist-vendored
-*.dll linguist-vendored
-*.exe linguist-vendored
+*.rst linguist-documentation
+LICENSE* linguist-documentation
