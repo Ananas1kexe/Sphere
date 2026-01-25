@@ -29,14 +29,24 @@ app = typer.Typer(help="Sphere {version} Command Line Interface".format(version=
 
 @app.command("install", help="Install packages ")
 def install(package: str):
-
     install_main.install(package)
-
     raise typer.Exit()
 
-@app.command("update", help=" Update system packages  ")
-def update():
-    update_main.update_main()
+@app.command(
+    "update",
+    help=(
+        "Update system packages.\n"
+        "Flags:\n"
+        "  -y  auto-confirm all prompts\n"
+        "  -q  quiet mode (minimal output)"
+    )
+)
+
+def update(
+    yes: bool = typer.Option(False, "-y", help="Automatically confirm all prompts (non-interactive update)."),
+    quiet: bool = typer.Option(False, "-q", help="Reduce output verbosity. Show only important messages."),
+):
+    update_main.update_main(yes,quiet)
     raise typer.Exit()
 
 @app.command("v", help="Show application version")
