@@ -70,4 +70,4 @@ Whether you're a power user, a sysadmin, or just curious about your system, `Sph
 
 ## example
 
-![sph](sph.png)
+![sph](sph.jpg)
