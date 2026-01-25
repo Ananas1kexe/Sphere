@@ -2,7 +2,7 @@ import typer
 import psutil
 from ...lib.cpu import vendor, brand, logical_cores, physical_cores, cpu_frequency_mhz, cpu_family, cpu_model, cpu_stepping, architecture, l1_cache_size_kb, l2_cache_size_kb, l3_cache_size_kb, hyperthreading, virtualization, has_fpu, has_mmx, has_sse, has_sse2, has_sse3, has_ssse3, has_sse4_1, has_sse4_2, has_avx, has_avx2, has_fma, has_aes, has_rdrand, has_bmi1, has_bmi2
 
-# ===== Функции вывода (УДАЛИ дубликаты в конце файла!) =====
+
 def minimal():
     """Minimal CPU info with colors"""
     typer.echo()
