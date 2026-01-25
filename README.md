@@ -20,14 +20,18 @@
 
 ## 🔹 Available Commands
 
-| Command        | Description                                                                 |
-|----------------|----------------------------------------------------------------------------|
-| `ram -f/-m`    | Show RAM information. `-f` — full, `-m` — minimal.                        |
-| `cpu -f/-m`    | Show CPU information. `-f` — full, `-m` — minimal.                        |
-| `net -f/-m`    | Show network interface info. `-f` — full, `-m` — minimal.                  |
-| `logo`         | Display a logo or ASCII graphic.                                           |
-| `--help`       | Show help and available commands.                                          |
-| `v`            | Show the version of the utility.                                          |
+| Command        | Description                                                   |
+|----------------|---------------------------------------------------------------|
+| `install`      | Install packages                                              |
+| `update`       | Update system packages                                        |
+| `ram -f/-m`    | Show RAM information (-f full, -m minimal)                    |
+| `cpu -f/-m`    | Show CPU information (-f full, -m minimal)                    |
+| `net -f/-m`    | Show network interface info (-f full, -m minimal)             |
+| `logo`         | Display a logo or ASCII graphic                               |
+| `users`        | Show all users                                                |
+| `sphfetch`     | Display system info and logo                                   |
+| `v`            | Show the version of the utility                                |
+| `--help`       | Show help and available commands                               |
 
 ---
 
