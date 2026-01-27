@@ -5,6 +5,7 @@ from .ram_info.commands_ram import commands_ram
 from .net_show.commands_net import commands_net
 from .gpu_info.commands_gpu import commands_gpu
 from .disk_show.commands_disk import commands_disk
+from .cpu_info.commands_cpu import commands_cpu
 def register_hardware_commands(app):
     commands_users(app)
     commands_sphfetch(app)
@@ -12,3 +13,4 @@ def register_hardware_commands(app):
     commands_net(app)
     commands_gpu(app)
     commands_disk(app)
+    commands_cpu(app)
