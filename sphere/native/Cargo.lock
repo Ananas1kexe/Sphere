@@ -877,6 +877,7 @@ version = "0.1.0"
 dependencies = [
  "cpuid",
  "num_cpus",
+ "once_cell",
  "pollster",
  "psutil",
  "pyo3",
