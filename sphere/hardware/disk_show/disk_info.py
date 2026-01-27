@@ -7,7 +7,7 @@ def disk_show(mode: str):
     elif mode == "full":
         full()
     else:
-        typer.echo("Please specify a valid mode: 'minimal' or 'full'.")
+        typer.echo("Please specify a valid mode: '-m' or '-f'.")
 
 
 

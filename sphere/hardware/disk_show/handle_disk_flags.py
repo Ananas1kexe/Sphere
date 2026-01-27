@@ -1,3 +1,4 @@
+import typer
 def handle_disk_flags(minimal: bool, full: bool) -> str:
     if minimal and full:
         typer.echo("Please specify only one option: '-m' or '-f'.")
