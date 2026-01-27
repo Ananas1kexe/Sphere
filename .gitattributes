@@ -1,0 +1,23 @@
+
+*.py linguist-language=Python
+*.rs linguist-language=Rust
+
+
+node_modules/** linguist-vendored
+__pycache__/** linguist-vendored
+*.pyc linguist-vendored
+*.pyo linguist-vendored
+*.pyd linguist-vendored
+target/** linguist-vendored
+Cargo.lock linguist-vendored
+dist/** linguist-vendored
+build/** linguist-vendored
+*.min.* linguist-vendored
+*.bundle.js linguist-vendored
+*.log linguist-vendored
+*.cache linguist-vendored
+
+*.md linguist-documentation
+*.txt linguist-documentation
+*.rst linguist-documentation
+LICENSE* linguist-documentation
